@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body id="body">
+    <div class="container">
+      <div class="login-box" id="login_box">
+        <div class="main">
+          <!-- top -->
+          <div class="logo-box">
+            <div class="logo">
+              <a href="#">
+                <img src="logo.svg" alt="logo" />
+              </a>
+            </div>
+            <div class="enroll-box">
+              <p>Are you a new customer?</p>
+              <div class="dropdown-container">
+                <button class="enroll-btn">Enroll Now</button>
+                <ul class="dropdown">
+                  <li>Enroll now to</li>
+                  <li>
+                    <span class="checkmark">✓</span> Access your loans online
+                  </li>
+                  <li>
+                    <span class="checkmark">✓</span> Pay your mortgage online
+                  </li>
+                  <li>
+                    <span class="checkmark">✓</span> View your mortgage
+                    statements
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- form -->
+          <div class="from-box">
+            <!-- heading -->
+            <div class="heading">
+              <h1>Welcome Back</h1>
+              <p>Sign in to your Regions MyMortgage account.</p>
+            </div>
+            <div class="form-container">
+              <form onsubmit="handleSubmit(event)" id="login-form">
+                <div class="input-group">
+                  <input
+                    class="input-field"
+                    type="text"
+                    id="online-id"
+                    name="onlineId"
+                    placeholder=" "
+                  />
+                  <label class="custom-label" for="online-id">Online ID</label>
+                  <small class="error-message" id="online-id-error"></small>
+                </div>
+                <div class="input-group password-group">
+                  <input
+                    class="input-field"
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder=" "
+                  />
+                  <label class="custom-label" for="password">Password</label>
+                  <span
+                    class="show-password"
+                    id="togglePassword"
+                    onclick="togglePassword()"
+                    >show</span
+                  >
+                  <small class="error-message" id="password-error"></small>
+                </div>
+                <div style="margin-bottom: 20px">
+                  <div class="checkbox-group">
+                    <input type="checkbox" id="remember-me" name="rememberMe" />
+                    <label for="remember-me" class="checkbox-label"
+                      >Remember Me</label
+                    >
+                  </div>
+                  <small class="error-message" id="checkbox-error"></small>
+                </div>
+
+                <button class="login-btn" type="submit">Login</button>
+              </form>
+              <div class="forget-box">
+                <p><a href="#">Forget Online ID?</a></p>
+                <p>.</p>
+                <p><a href="#">Forget Password?</a></p>
+              </div>
+            </div>
+          </div>
+          <!-- bottom -->
+          <div class="info">
+            <div class="housing-info">
+              <div class="housing">
+                <img src="home-logo.png" alt="icon" />
+                <p>Equal Housing Lender</p>
+              </div>
+              <p>.</p>
+              <p>Member FDIC</p>
+            </div>
+            <div class="copyright">
+              <p>
+                &copy;2024 Regions Financial Corporation. All Right Reserved.
+              </p>
+              <p>.</p>
+              <p style="color: #8b0">1(800)REGIONS</p>
+            </div>
+          </div>
+        </div>
+        <div class="img-box">
+          <img src="home.jpg" alt="home" />
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

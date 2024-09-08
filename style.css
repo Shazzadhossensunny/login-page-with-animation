@@ -1,0 +1,560 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,100&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  vertical-align: middle;
+  height: 100%;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  -webkit-text-fill-color: initial !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Container */
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+  max-width: 1300px;
+  width: 100%;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* global cs end */
+
+/* Login Box */
+.login-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Logo and Heading */
+.logo-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 999;
+}
+
+.logo-box .enroll-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-box .enroll-box p,
+.heading p {
+  color: #767676;
+}
+
+.logo-box .enroll-box button {
+  color: #8b0;
+  border: 1px solid #ccc;
+  padding: 8px 18px;
+  background: transparent;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* dropdown */
+
+.dropdown-container {
+  position: relative;
+  z-index: 1000;
+}
+
+.dropdown {
+  display: block;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 15px;
+  padding: 10px 0;
+  background-color: #000;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 2000;
+  width: max-content;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.enroll-box:hover .dropdown,
+.dropdown-container:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.2s;
+  display: block;
+}
+
+.dropdown::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  right: 40px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent #000 transparent;
+}
+
+.dropdown li {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dropdown li:hover:nth-child(1) {
+  background-color: transparent;
+}
+
+.dropdown li:hover {
+  background-color: #333;
+}
+
+.checkmark {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  font-size: 14px;
+  color: #8b0;
+  background-color: lightgreen;
+  border-radius: 50%;
+}
+/* dropdown */
+
+.heading {
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 30px;
+}
+
+.heading h1 {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+/* Form Container */
+.form-container {
+  background: #fff;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Input Group */
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px 10px;
+  padding-top: 20px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background: transparent;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: #8b0;
+}
+
+.custom-label {
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  padding: 0 4px;
+  color: #aaa;
+  font-size: 14px;
+  pointer-events: none;
+  transition: 0.3s ease all;
+}
+
+.input-field:focus + .custom-label,
+.input-field:not(:placeholder-shown) + .custom-label {
+  top: 4px;
+  font-size: 12px;
+  color: #8b0;
+  font-weight: 600;
+}
+
+/* Password Group */
+.password-group {
+  position: relative;
+}
+
+.show-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 12px;
+  color: #666;
+}
+
+/* Checkbox Group */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-group input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 25px;
+  height: 25px;
+  border: 2px solid #eee;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  background: #fff;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+.checkbox-group input[type="checkbox"]:checked {
+  border-color: #8b0;
+  background-color: #8b0;
+}
+
+.checkbox-group input[type="checkbox"]:checked::after {
+  content: "✓";
+  font-size: 16px;
+  color: #fff;
+  position: absolute;
+  top: -2px;
+  left: 4px;
+}
+
+.checkbox-group input {
+  margin-right: 8px;
+}
+
+.checkbox-label {
+  font-size: 14px;
+  color: #aaa;
+}
+.error-message {
+  color: red;
+  margin-top: 5px;
+}
+
+/* Login Button */
+.login-btn {
+  width: 100%;
+  padding: 16px 0;
+  border: none;
+  border-radius: 30px;
+  background-color: #006400;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #8b0;
+}
+
+/* Forget Box */
+.forget-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #8b0;
+  margin-top: 30px;
+}
+
+.forget-box p a {
+  color: #8b0;
+}
+
+/* Info Section */
+.info {
+  margin-top: 100px;
+}
+
+.housing-info,
+.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 12px;
+  color: #666;
+}
+
+.housing-info .housing {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.housing-info .housing img {
+  width: 15px;
+  height: 15px;
+  object-fit: cover;
+}
+
+.copyright {
+  margin-top: 8px;
+}
+
+.img-box img {
+  border-radius: 12px;
+}
+
+/* spinner */
+
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* centered logo */
+.centered-logo-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.centered-logo-container img {
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.home-img {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+/*zoom animation and center every thing  */
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* Zoom-in animation */
+.zoom-in {
+  animation: zoomIn 0.6s forwards;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Zoom-out animation */
+.zoom-out {
+  animation: zoomOut 0.6s forwards;
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1100px) {
+  body {
+    height: auto;
+  }
+  .container {
+    max-width: 900px;
+    padding: 15px;
+    height: auto;
+  }
+
+  .login-box {
+    grid-template-columns: 1fr;
+  }
+
+  .heading h1 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    max-width: 700px;
+    padding: 10px;
+  }
+
+  .login-box {
+    gap: 16px;
+  }
+
+  .heading h1 {
+    font-size: 28px;
+  }
+
+  .checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    max-width: 500px;
+  }
+  .logo-box {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .heading h1 {
+    font-size: 24px;
+  }
+
+  .logo-box .enroll-box {
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .login-btn {
+    padding: 12px 0;
+  }
+}
+
+@media (max-width: 392px) {
+  .container {
+    max-width: 350px;
+    padding: 8px;
+  }
+
+  .dropdown {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .heading {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  .heading h1 {
+    font-size: 20px;
+  }
+
+  .input-field {
+    padding: 10px 8px;
+  }
+
+  .checkbox-group {
+    align-items: flex-start;
+  }
+
+  .login-btn {
+    padding: 10px 0;
+    font-size: 14px;
+  }
+
+  .forget-box {
+    gap: 8px;
+    font-size: 10px;
+  }
+  .housing-info,
+  .copyright {
+    flex-wrap: wrap;
+  }
+}
